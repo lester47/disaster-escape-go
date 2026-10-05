@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#fff7e8" />
+  <title>防災逃生 GO！地震安全闖關</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-go="home" aria-label="回首頁">🛡️ 防災逃生 GO！</button>
+      <div class="score-wrap" aria-live="polite">
+        <span>⭐ <strong id="score">0</strong></span>
+        <span>關卡 <strong id="levelCounter">0/6</strong></span>
+      </div>
+    </header>
+
+    <main id="app">
+      <section id="home" class="screen active">
+        <div class="hero">
+          <img src="assets/images/home-hero.png" alt="防災逃生GO地震安全闖關主視覺" />
+          <div class="hero-card">
+            <div class="eyebrow">校園防災互動學習</div>
+            <h1>防災逃生 GO！</h1>
+            <p class="subtitle">完成 6 個任務，成為真正的「防災小勇士」！</p>
+            <div class="goal-list">
+              <span>🏫 校園情境</span><span>🧠 即時判斷</span><span>🎮 闖關遊戲</span>
+            </div>
+            <button class="primary big" data-start>開始闖關</button>
+            <button class="ghost" data-go="guide">先看玩法</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="guide" class="screen">
+        <div class="panel compact">
+          <h2>🎯 怎麼玩？</h2>
+          <p>每一關都是校園裡可能遇到的防災情境。仔細看圖片、選出正確做法，答對就能拿到星星。</p>
+          <div class="guide-grid">
+            <div>1️⃣ 看情境</div><div>2️⃣ 做選擇</div><div>3️⃣ 得回饋</div><div>4️⃣ 完成任務</div>
+          </div>
+          <button class="primary big" data-start>我準備好了！</button>
+        </div>
+      </section>
+
+      <section id="game" class="screen">
+        <div class="progress"><div id="progressBar"></div></div>
+        <article class="game-card">
+          <div class="image-wrap"><img id="levelImage" alt="防災闖關情境圖片" /></div>
+          <div class="content-wrap">
+            <div class="level-kicker" id="levelKicker"></div>
+            <h2 id="levelTitle"></h2>
+            <p id="levelPrompt" class="prompt"></p>
+            <div id="options" class="options"></div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+            <button id="nextBtn" class="primary next hidden">下一關 ➜</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="result" class="screen">
+        <div class="result-card">
+          <img src="assets/images/level6-assembly-point.png" alt="學生抵達集合點完成任務" />
+          <div class="result-body">
+            <div class="badge">🏅 防災小勇士</div>
+            <h2>任務完成！</h2>
+            <p id="resultText"></p>
+            <div class="final-score">⭐ <span id="finalScore">0</span> / 6</div>
+            <div class="result-actions">
+              <button class="primary big" id="retryBtn">再挑戰一次</button>
+              <button class="ghost" data-go="home">回首頁</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>給國小學生的防災情境學習｜圖片採一致 3D 黏土風生成素材</footer>
+  </div>
+  <script src="js/game.js"></script>
+</body>
+</html>
